@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./FrameScroll.css";
 
-const frameModules = import.meta.glob("./assets/Frames/frame_*.jpg", {
+const frameModules = import.meta.glob("./assets/Frames/frame_*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -13,7 +13,29 @@ const frames = Object.entries(frameModules)
 
 function FrameScroll() {
   const sectionRef = useRef(null);
+  const preloadedFramesRef = useRef(new Map());
   const [frameIndex, setFrameIndex] = useState(0);
+
+  useEffect(() => {
+    const firstFrame = Math.max(0, frameIndex - 8);
+    const lastFrame = Math.min(frames.length - 1, frameIndex + 16);
+
+    for (const [index, image] of preloadedFramesRef.current) {
+      if (index < firstFrame || index > lastFrame) {
+        preloadedFramesRef.current.delete(index);
+      }
+    }
+
+    for (let index = firstFrame; index <= lastFrame; index += 1) {
+      if (index === frameIndex || preloadedFramesRef.current.has(index)) continue;
+
+      const image = new Image();
+      image.decoding = "async";
+      image.fetchPriority = "low";
+      image.src = frames[index];
+      preloadedFramesRef.current.set(index, image);
+    }
+  }, [frameIndex]);
 
   useEffect(() => {
     let animationFrame;
