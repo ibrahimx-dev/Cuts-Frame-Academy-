@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+:root {
+  --site-background-gradient:
+    /* Top-left vibrant periwinkle-indigo bloom */
+    radial-gradient(ellipse at 10% 4%, rgba(126, 118, 245, 0.45) 0%, transparent 52%),
+    /* Upper-right luminous cyan-teal wash */
+    radial-gradient(ellipse at 90% 18%, rgba(45, 188, 212, 0.38) 0%, transparent 50%),
+    /* Upper-mid warm magenta-violet aurora shift */
+    radial-gradient(ellipse at 25% 36%, rgba(168, 92, 224, 0.34) 0%, transparent 52%),
+    /* Center-right deep electric ocean glow */
+    radial-gradient(ellipse at 82% 54%, rgba(56, 148, 235, 0.40) 0%, transparent 54%),
+    /* Lower-left emerald-teal color-grade accent */
+    radial-gradient(ellipse at 14% 72%, rgba(42, 182, 168, 0.34) 0%, transparent 52%),
+    /* Bottom-right rich royal violet-plum bloom */
+    radial-gradient(ellipse at 86% 92%, rgba(142, 98, 232, 0.44) 0%, transparent 55%),
+    /* Multi-stop base canvas shifting across 6 distinct hues */
+    linear-gradient(
+      165deg,
+      #161b3a 0%,
+      #172b4d 20%,
+      #143d52 40%,
+      #1c274c 62%,
+      #241d45 82%,
+      #141c38 100%
+    );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: whitesmoke;
+}
+
+body {
+  font-family: 'sans-family', sans-serif;
+  overflow-x: hidden;
+  background-color: var(--site-background-color);
+  background-image: var(--site-background-gradient);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+

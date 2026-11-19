@@ -1,0 +1,268 @@
+/* =========================================
+   INSTRUCTOR SPOTLIGHT — STICKY STACKED CARDS
+========================================= */
+
+.instructor-section {
+  scroll-margin-top: 90px;
+  position: relative;
+  padding: 7rem 0 14rem; /* Leave a little extra room after the final mentor card */
+  background-color: transparent;
+  color:whitesmoke;
+}
+
+.instructor-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Header */
+.instructor-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.instructor-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #D6A85F;
+  margin-bottom: 0.75rem;
+}
+
+.instructor-main-title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: #E8EDF4;
+}
+
+.gold-accent {
+  color: #D6A85F;
+}
+
+.instructor-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(232, 237, 244, 0.7);
+  margin: 0;
+}
+
+/* Sticky Stack Wrapper Container */
+.instructor-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Spacing between initial card positions */
+}
+
+.instructor-sticky-wrapper {
+  position: sticky;
+  /* top is dynamically injected via inline style based on card index */
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* Individual Card Styling */
+.instructor-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+  background: linear-gradient(160deg, #102A46 0%, #071426 100%);
+  border: 1px solid rgba(214, 168, 95, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 2.5rem;
+  box-shadow: 0 25px 60px rgba(3, 10, 20, 0.75), 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Alternating Layout */
+.instructor-card.reverse-layout {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.instructor-card.reverse-layout .instructor-visual-col {
+  order: 2;
+}
+
+.instructor-card.reverse-layout .instructor-content-col {
+  order: 1;
+}
+
+/* Visual Column */
+.instructor-visual-col {
+  position: relative;
+  width: 100%;
+}
+
+.instructor-image-wrapper {
+  position: relative;
+  height: 380px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #153558 0%, #08172b 100%);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.instructor-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.instructor-card:hover .instructor-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.instructor-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7, 20, 38, 0.85) 0%,
+    transparent 50%
+  );
+}
+
+.instructor-number-tag {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #D6A85F;
+  background: rgba(7, 20, 38, 0.75);
+  border: 1px solid rgba(214, 168, 95, 0.3);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+}
+
+.instructor-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E8EDF4;
+  background: rgba(214, 168, 95, 0.2);
+  border: 1px solid rgba(214, 168, 95, 0.4);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* Content Column */
+.instructor-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.instructor-role {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #D6A85F;
+  margin-bottom: 0.5rem;
+}
+
+.instructor-name {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  color: #E8EDF4;
+  line-height: 1.2;
+}
+
+.instructor-credits-box {
+  background: rgba(16, 42, 70, 0.5);
+  border-left: 3px solid #D6A85F;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.25rem;
+}
+
+.credits-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232, 237, 244, 0.5);
+  margin-bottom: 0.2rem;
+}
+
+.credits-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #E8EDF4;
+  margin: 0;
+}
+
+.instructor-bio {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(232, 237, 244, 0.75);
+  margin: 0 0 1.5rem;
+}
+
+.instructor-software-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.software-pill {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  background: rgba(232, 237, 244, 0.05);
+  border: 1px solid rgba(232, 237, 244, 0.12);
+  border-radius: 6px;
+  color: rgba(232, 237, 244, 0.85);
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+@media (max-width: 968px) {
+  .instructor-sticky-wrapper {
+    position: relative; /* Disable sticky stacking on small mobile screens for better UX */
+    top: auto !important;
+  }
+
+  .instructor-stack {
+    gap: 2.5rem;
+  }
+
+  .instructor-card,
+  .instructor-card.reverse-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .instructor-card.reverse-layout .instructor-visual-col,
+  .instructor-card.reverse-layout .instructor-content-col {
+    order: unset;
+  }
+
+  .instructor-image-wrapper {
+    height: 280px;
+  }
+}

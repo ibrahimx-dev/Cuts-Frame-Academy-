@@ -1,0 +1,161 @@
+/* =========================================
+   ABOUT US
+========================================= */
+
+.about-us-section {
+  position: relative;
+  padding: 7rem 0;
+  background-color: transparent;
+  color:whitesmoke;
+  overflow: hidden;
+}
+
+.about-us-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+/* Header */
+.about-us-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.about-us-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #D6A85F;
+  margin-bottom: 0.75rem;
+}
+
+.about-us-title {
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: #E8EDF4;
+}
+
+.gold-accent {
+  color: #D6A85F;
+}
+
+.about-us-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(232, 237, 244, 0.7);
+  margin: 0;
+}
+
+/* Grid Layout */
+.about-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* About Us Card */
+.about-us-card {
+  background: linear-gradient(160deg, #102A46 0%, #08172b 100%);
+  border: 1px solid rgba(232, 237, 244, 0.08);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  box-shadow: 0 15px 35px rgba(3, 10, 20, 0.4);
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-us-card:hover {
+  border-color: rgba(214, 168, 95, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(3, 10, 20, 0.6), 0 0 20px rgba(214, 168, 95, 0.1);
+}
+
+/* Card Header */
+.about-us-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-us-icon {
+  font-size: 2rem;
+  background: rgba(214, 168, 95, 0.1);
+  border: 1px solid rgba(214, 168, 95, 0.25);
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-number {
+  font-family: monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(232, 237, 244, 0.25);
+}
+
+/* Card Body */
+.about-us-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.about-us-category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #D6A85F;
+}
+
+.about-us-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #E8EDF4;
+  margin: 0;
+}
+
+.about-us-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(232, 237, 244, 0.72);
+  margin: 0;
+}
+
+/* Card Footer */
+.about-us-card-footer {
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(232, 237, 244, 0.08);
+}
+
+.about-us-highlight {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #D6A85F;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+@media (max-width: 900px) {
+  .about-us-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
