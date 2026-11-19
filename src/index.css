@@ -2,29 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
 
 :root {
+  --site-background-color: #0b1220;
   --site-background-gradient:
-    /* Top-left vibrant periwinkle-indigo bloom */
-    radial-gradient(ellipse at 10% 4%, rgba(126, 118, 245, 0.45) 0%, transparent 52%),
-    /* Upper-right luminous cyan-teal wash */
-    radial-gradient(ellipse at 90% 18%, rgba(45, 188, 212, 0.38) 0%, transparent 50%),
-    /* Upper-mid warm magenta-violet aurora shift */
-    radial-gradient(ellipse at 25% 36%, rgba(168, 92, 224, 0.34) 0%, transparent 52%),
-    /* Center-right deep electric ocean glow */
-    radial-gradient(ellipse at 82% 54%, rgba(56, 148, 235, 0.40) 0%, transparent 54%),
-    /* Lower-left emerald-teal color-grade accent */
-    radial-gradient(ellipse at 14% 72%, rgba(42, 182, 168, 0.34) 0%, transparent 52%),
-    /* Bottom-right rich royal violet-plum bloom */
-    radial-gradient(ellipse at 86% 92%, rgba(142, 98, 232, 0.44) 0%, transparent 55%),
-    /* Multi-stop base canvas shifting across 6 distinct hues */
-    linear-gradient(
-      165deg,
-      #161b3a 0%,
-      #172b4d 20%,
-      #143d52 40%,
-      #1c274c 62%,
-      #241d45 82%,
-      #141c38 100%
-    );
+    radial-gradient(ellipse at 12% 0%, rgba(52, 105, 180, 0.2) 0%, transparent 42%),
+    radial-gradient(ellipse at 92% 24%, rgba(28, 119, 140, 0.12) 0%, transparent 38%),
+    linear-gradient(155deg, #0b1220 0%, #101d30 52%, #0a1422 100%);
 }
 
 * {
@@ -35,55 +17,24 @@
 }
 
 :root {
-  /* Deep, calibrated color-suite tones (low eye-strain, high contrast for white text) */
-  --bg-base: #090d16;
-  --glow-indigo: rgba(99, 102, 241, 0.22);
-  --glow-cyan: rgba(14, 165, 233, 0.18);
-  --glow-amber: rgba(211, 65, 0, 0.12); /* Subtle echo of your #d34100 CTA */
-  --grid-line: rgba(255, 255, 255, 0.035);
+  --site-text-primary: #f4f7fb;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body,
 .studio-page-background {
   position: relative;
   min-height: 100vh;
-  background-color: var(--bg-base);
-  background-image:
-    /* 1. Top-left soft indigo spotlight */
-    radial-gradient(ellipse 65% 45% at 15% 5%, var(--glow-indigo), transparent 70%),
-    /* 2. Mid-right oceanic cyan light leak */
-    radial-gradient(ellipse 55% 40% at 88% 35%, var(--glow-cyan), transparent 70%),
-    /* 3. Subtle warm amber rim glow near lower sections */
-    radial-gradient(ellipse 50% 45% at 20% 72%, var(--glow-amber), transparent 70%),
-    /* 4. Precision NLE timeline-style micro grid */
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
-    /* 5. Smooth vertical base gradient */
-    linear-gradient(180deg, #090d16 0%, #0d1526 48%, #0a101d 100%);
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    64px 64px,
-    64px 64px,
-    100% 100%;
+  background-color: var(--site-background-color);
+  background-image: var(--site-background-gradient);
+  background-attachment: fixed;
+  color: var(--site-text-primary);
   overflow-x: hidden;
-}
-
-/* 6. Ultra-fine organic film grain overlay (prevents gradient banding & adds cinema texture) */
-.studio-page-background::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Ensures your content and glassmorphism cards sit crisply above the grain */
-.studio-page-background > * {
-  position: relative;
-  z-index: 1;
 }
 
 html {
