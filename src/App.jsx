@@ -27,7 +27,7 @@ function RouteScrollManager() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <RouteScrollManager />
       <Routes>
         <Route path="/" element={<HomePage />} />
